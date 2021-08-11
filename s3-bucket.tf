@@ -1,9 +1,6 @@
-resource "aws_s3_bucket" "b"{
-  bucket = "my-tf-buckybuck"
-  acl    = "private"
-
-  tags = {
-    Name        = "MyBucky"
-    Environment = "Dev"
-  }
+module "s3-bucket" {
+  source  = "app.terraform.io/Punk-training/s3-bucket/aws"
+  version = "2.2.0"
+  # insert required variables here
+  bucket_prefix = Pankaj_Biradar
 }
